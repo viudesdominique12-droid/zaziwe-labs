@@ -9,8 +9,9 @@ document.documentElement.classList.add('js');
 
 /* ===== CONFIG — À PERSONNALISER AVANT MISE EN LIGNE ===== */
 const CONFIG = {
-  // URL finale du site (pour le QR code). Vide = utilise l'URL actuelle.
-  siteUrl: '',
+  // URL du site, utilisée par le QR code et le bouton de partage.
+  // À remplacer le jour où le labo prend un nom de domaine.
+  siteUrl: 'https://viudesdominique12-droid.github.io/zaziwe-labs/',
   // ⚠️ PLACEHOLDER — vrais numéros à fournir par le client
   phone: '+27123456789',
   whatsapp: '',            // ex: '27123456789' (sans +) — active les boutons WhatsApp
