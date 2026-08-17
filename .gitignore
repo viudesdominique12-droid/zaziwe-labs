@@ -1,0 +1,4 @@
+.DS_Store
+.claude/
+# Fichiers de travail (code source d'origine envoyé par le client)
+*.txt

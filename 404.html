@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample not found — Zaziwe Medical Laboratories</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 2C32 2 8 26 8 40a24 24 0 0 0 48 0C56 26 32 2 32 2Z' fill='%231B3FA6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .lost {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: flex-start; justify-content: center;
+      max-width: 1280px; margin: 0 auto; padding: 2rem clamp(1.25rem, 4vw, 3rem);
+    }
+    .lost .goutte-mark { margin-bottom: 2rem; animation: preloader-drop 1.4s var(--ease-pipette) infinite alternate; }
+    .lost .code-line {
+      font-family: var(--font-mono); font-size: var(--label); letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 1.4rem;
+    }
+    .lost h1 {
+      font-family: var(--font-display); font-weight: 560; font-size: var(--step-4);
+      line-height: 1.02; letter-spacing: -0.02em; margin-bottom: 1rem; max-width: 18ch;
+    }
+    .lost h1 em { font-style: italic; color: var(--accent); }
+    .lost p { color: var(--muted); margin-bottom: 2rem; max-width: 46ch; }
+  </style>
+</head>
+<body>
+  <div class="lost">
+    <span class="goutte-mark" aria-hidden="true"></span>
+    <p class="code-line">ZW—404 / SAMPLE NOT FOUND</p>
+    <h1>This page went to the lab<br>and <em>never came back.</em></h1>
+    <p>The address may have been mistyped, or the page has been archived. Everything you need is on the main page — tests, prices and booking.</p>
+    <a href="./" class="btn btn-primary">Back to the lab</a>
+  </div>
+</body>
+</html>
