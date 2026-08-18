@@ -12,11 +12,11 @@ const CONFIG = {
   // URL du site, utilisée par le QR code et le bouton de partage.
   // À remplacer le jour où le labo prend un nom de domaine.
   siteUrl: 'https://viudesdominique12-droid.github.io/zaziwe-labs/',
-  // ⚠️ PLACEHOLDER — vrais numéros à fournir par le client
-  phone: '+27123456789',
-  whatsapp: '',            // ex: '27123456789' (sans +) — active les boutons WhatsApp
-  telegram: '',            // ex: 'ZaziweLabs' — active les boutons Telegram
-  email: 'info@zaziwelabs.co.za',
+  // Coordonnées officielles (confirmées par le laboratoire)
+  phone: '+251908000077',
+  whatsapp: '251908000077',        // wa.me — numéro principal de la société
+  telegram: '+251908000077',       // t.me/+<numéro>
+  email: 'zaziwemedlab@gmail.com',
   currency: 'ETB',
   // ⚠️ PIN staff par défaut — À CHANGER. (Sécurité côté navigateur uniquement :
   // la vraie authentification arrive avec la base de données, phase suivante.)
@@ -26,32 +26,47 @@ const CONFIG = {
   reviewMode: true
 };
 
-/* ===== CATALOGUE PAR DÉFAUT =====
-   ⚠️ PLACEHOLDER — tests et prix à valider avec le client.
-   Le staff peut les modifier depuis le site (mode staff). */
+/* ===== CATALOGUE — « OUR SERVICES » du flyer officiel du laboratoire =====
+   Prix unitaires non communiqués à ce jour → « Ask for price ».
+   Le staff peut ajouter les prix depuis le site (mode staff). */
 const DEFAULT_TESTS = [
-  { id: 'cbc',     name: 'Full Blood Count',     code: 'CBC-01', price: 0, available: true },
-  { id: 'glucose', name: 'Blood Glucose',        code: 'GLU-02', price: 0, available: true },
-  { id: 'lipid',   name: 'Lipid Profile',        code: 'LIP-03', price: 0, available: true },
-  { id: 'liver',   name: 'Liver Function',       code: 'LFT-04', price: 0, available: true },
-  { id: 'kidney',  name: 'Kidney Function',      code: 'KFT-05', price: 0, available: true },
-  { id: 'malaria', name: 'Malaria Test',         code: 'MAL-06', price: 0, available: true },
-  { id: 'typhoid', name: 'Typhoid (Widal)',      code: 'TYP-07', price: 0, available: true },
-  { id: 'hiv',     name: 'HIV Screening',        code: 'HIV-08', price: 0, available: true },
-  { id: 'hcg',     name: 'Pregnancy Test (hCG)', code: 'HCG-09', price: 0, available: true },
-  { id: 'urine',   name: 'Urinalysis',           code: 'URI-10', price: 0, available: true },
-  { id: 'tsh',     name: 'Thyroid (TSH)',        code: 'TSH-11', price: 0, available: true },
-  { id: 'hpylori', name: 'H. Pylori Test',       code: 'HPY-12', price: 0, available: true }
+  { id: 'arthritis-collagen-tests', name: 'Arthritis & Collagen Tests', code: '', price: 0, available: true },
+  { id: 'body-fluid-analysis', name: 'Body Fluid Analysis', code: '', price: 0, available: true },
+  { id: 'cancer-markers', name: 'Cancer Markers', code: '', price: 0, available: true },
+  { id: 'cd4', name: 'CD4', code: '', price: 0, available: true },
+  { id: 'coagulation', name: 'Coagulation', code: '', price: 0, available: true },
+  { id: 'culture', name: 'Culture', code: '', price: 0, available: true },
+  { id: 'electrolytes', name: 'Electrolytes', code: '', price: 0, available: true },
+  { id: 'fertility-test-for-male-and-female', name: 'Fertility Test for Male and Female', code: '', price: 0, available: true },
+  { id: 'glucose-hba1c-insulin', name: 'Glucose, HbA1c, Insulin', code: '', price: 0, available: true },
+  { id: 'hepatitis-a-b-c', name: 'Hepatitis A, B, C', code: '', price: 0, available: true },
+  { id: 'hepatitis-b-c-viral-load', name: 'Hepatitis B, C Viral Load', code: '', price: 0, available: true },
+  { id: 'hiv-hiv-viral-load-cd4', name: 'HIV, HIV Viral Load & CD4', code: '', price: 0, available: true },
+  { id: 'hemoparasite', name: 'Hemoparasite', code: '', price: 0, available: true },
+  { id: 'hormone-tests', name: 'Hormone Tests', code: '', price: 0, available: true },
+  { id: 'iron-study', name: 'Iron Study', code: '', price: 0, available: true },
+  { id: 'ogtt', name: 'OGTT', code: '', price: 0, available: true },
+  { id: 'lipid-profile', name: 'Lipid Profile', code: '', price: 0, available: true },
+  { id: 'liver-renal-function-test', name: 'Liver & Renal Function Test', code: '', price: 0, available: true },
+  { id: 'pregnancy-test', name: 'Pregnancy Test', code: '', price: 0, available: true },
+  { id: 'semen-analysis', name: 'Semen Analysis', code: '', price: 0, available: true },
+  { id: 'uric-acid', name: 'Uric Acid', code: '', price: 0, available: true },
+  { id: 'urinalysis-stool', name: 'Urinalysis & Stool', code: '', price: 0, available: true },
+  { id: 'vdrl-tpha', name: 'VDRL & TPHA', code: '', price: 0, available: true },
+  { id: 'vitamin-b-vitamin-d', name: 'Vitamin B, Vitamin D', code: '', price: 0, available: true },
+  { id: 'wet-smear-gram-stains', name: 'Wet Smear & Gram Stains', code: '', price: 0, available: true },
+  { id: 'others', name: 'Others', code: '', price: 0, available: true }
 ];
 
 // Aucune actualité par défaut : le staff publie les siennes depuis le site.
 const DEFAULT_UPDATES = [];
 
-/* ⚠️ PLACEHOLDER — équipe à confirmer avec le client (noms, rôles, contacts) */
+/* Équipe — noms et numéros directs communiqués par le laboratoire.
+   Chaque membre est joignable par téléphone, WhatsApp et Telegram. */
 const STAFF = [
-  { name: 'Staff member 1', role: 'Laboratory Director',   phone: CONFIG.phone },
-  { name: 'Staff member 2', role: 'Senior Lab Technician', phone: CONFIG.phone },
-  { name: 'Staff member 3', role: 'Patient Coordinator',   phone: CONFIG.phone }
+  { name: 'Nardos Mekonnen',  role: 'Laboratory Director',   phone: '+251910990963' },
+  { name: 'Tigist Anbese',    role: 'Senior Lab Technician', phone: '+251923602953' },
+  { name: 'Betelhem Sisay',   role: 'Patient Coordinator',   phone: '+251978978342' }
 ];
 
 
@@ -141,7 +156,6 @@ function bindReveals(root = document) {
 function tariffRowHTML(t, i, inModal) {
   return `
     <div class="tariff-row rv-row" data-id="${t.id}" style="--d:${(i % 8) * 60}ms">
-      <span class="code">${esc(t.code)}</span>
       <span class="name"><span class="state ${t.available ? '' : 'off'}" title="${t.available ? 'Available' : 'Unavailable'}"></span>${esc(t.name)}</span>
       <span class="price">${fmtPrice(t.price)}</span>
       <button class="select-test" data-select="${t.id}" ${t.available ? '' : 'disabled'}>${inModal ? 'Book' : 'Choose'}</button>
@@ -170,14 +184,18 @@ function renderTariff() {
 function renderBookingSelect() {
   const sel = $('#bkTest');
   const current = sel.value;
-  const packages = ['Package 1', 'Package 2', 'Package 3'];  // ⚠️ noms à fournir par le client
+  const packages = [
+    ['Diabetes Care Package', 3400], ['Liver & Kidney Health Package', 4100],
+    ['Fertility Assessment Package', 6500], ['HIV Care & Monitoring Package', 6000],
+    ['Full Body Check-up Package', 5000]
+  ];
   sel.innerHTML =
     '<option value="" disabled selected>Choose a test or package…</option>' +
     '<optgroup label="Tests">' +
     tests.filter((t) => t.available).map((t) => `<option value="${esc(t.name)}">${esc(t.name)} — ${fmtPrice(t.price)}</option>`).join('') +
     '</optgroup>' +
     '<optgroup label="Packages">' +
-    packages.map((p) => `<option value="${esc(p)} (package)">${esc(p)} (package)</option>`).join('') +
+    packages.map(([p, pr]) => `<option value="${esc(p)}">${esc(p)} — ${CONFIG.currency} ${pr.toLocaleString('en-US')}</option>`).join('') +
     '</optgroup>';
   if (current) sel.value = current;
 }
@@ -204,10 +222,10 @@ document.addEventListener('click', (e) => {
 
 document.querySelectorAll('[data-package]').forEach((btn) => {
   btn.addEventListener('click', () => {
-    $('#bkTest').value = btn.dataset.package + ' (package)';
+    $('#bkTest').value = btn.dataset.package;
     const disp = $('#selectedTestDisplay');
     disp.style.display = 'block';
-    disp.textContent = `SELECTED — ${btn.dataset.package.toUpperCase()} PACKAGE`;
+    disp.textContent = `SELECTED — ${btn.dataset.package.toUpperCase()}`;
     document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
     $('#bkName').focus({ preventScroll: true });
   });
@@ -333,15 +351,15 @@ function renderUpdates() {
 /* ===== ÉQUIPE : LA LISTE-SIGNATURES ===== */
 function renderStaff() {
   $('#staffList').innerHTML = STAFF.map((s, i) => {
-    const wa = CONFIG.whatsapp ? `<a href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">WhatsApp</a>` : '';
-    const tg = CONFIG.telegram ? `<a href="https://t.me/${CONFIG.telegram}" target="_blank" rel="noopener">Telegram</a>` : '';
+    const num = s.phone.replace(/[^0-9]/g, '');   // wa.me veut le numéro sans « + »
     return `
       <div class="team-row rv-row" style="--d:${i * 100}ms">
         <span class="name">${esc(s.name)}</span>
         <span class="role">${esc(s.role)}</span>
         <span class="links">
           <a href="tel:${esc(s.phone)}">Call</a>
-          ${wa}${tg}
+          <a href="https://wa.me/${num}" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://t.me/${esc(s.phone)}" target="_blank" rel="noopener">Telegram</a>
         </span>
       </div>`;
   }).join('');
