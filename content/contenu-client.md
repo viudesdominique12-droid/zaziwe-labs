@@ -115,3 +115,16 @@ automate de biochimie. **Photos d'équipe : reportées** (tout le personnel n'é
 4. Version amharique du site
 5. Choix du code staff
 6. Logo en version horizontale / fond transparent (pour l'en-tête)
+
+## Heure éthiopienne (décision Dominique, 21/08/2026)
+La version **amharique** affiche l'heure **éthiopienne** (le jour commence au lever du soleil,
+soit −6 h) ; la version **anglaise** garde l'heure internationale.
+- 8:30 AM → **ከጠዋቱ 2:30**
+- 6:00 PM → **ከቀኑ 12:00**
+
+## Photos du laboratoire — reçues et identifiées
+Identifiées visuellement (les appareils portent leur nom sur l'étiquette) :
+`reception.jpg` (comptoir « RECEPTION » + salle d'attente) · `microscopes.jpg` (deux microscopes) ·
+`coagulation-analyzer.jpg` (« COAGULATION ANALYZER CA51 ») · `chemistry-analyzer.jpg`
+(« CHEMISTRY ANALYZER », Meril CliniQuant). Redimensionnées en 1080 px, ~90-120 Ko chacune.
+**Portraits de l'équipe : toujours en attente.**
