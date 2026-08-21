@@ -70,6 +70,76 @@ const STAFF = [
 ];
 
 
+
+/* ═══════════════════════════════════════════════════════════
+   BILINGUE ENGLISH / አማርኛ
+   Les textes statiques portent un attribut data-am dans le HTML.
+   Ici : le contenu généré par le JS (catalogue, équipe, statuts,
+   messages). Les NOMS D'ANALYSES restent en anglais dans les deux
+   langues — c'est la convention des laboratoires éthiopiens, les
+   patients les retrouvent tels quels sur leurs résultats.
+   ═══════════════════════════════════════════════════════════ */
+let LANG = localStorage.getItem('zaziwe_lang') === 'am' ? 'am' : 'en';
+
+const AM = {
+  // Catalogue
+  'Ask for price': 'ዋጋ ይጠይቁ',
+  'Choose': 'ይምረጡ',
+  'Book': 'ይያዙ',
+  'edit': 'አርትዕ',
+  'Available': 'አለ',
+  'Unavailable': 'የለም',
+  'Choose a test or package…': 'ምርመራ ወይም ጥቅል ይምረጡ…',
+  'Tests': 'ምርመራዎች',
+  'Packages': 'ጥቅሎች',
+  // Équipe
+  'Laboratory Director': 'የላብራቶሪ ዳይሬክተር',
+  'Senior Lab Technician': 'ከፍተኛ የላብራቶሪ ቴክኒሺያን',
+  'Patient Coordinator': 'የታካሚ አስተባባሪ',
+  'Call': 'ደውሉ',
+  'WhatsApp': 'ዋትስአፕ',
+  'Telegram': 'ቴሌግራም',
+  // Réservations
+  'No booking requests yet.': 'እስካሁን ምንም ጥያቄ የለም።',
+  'pending': 'በመጠባበቅ ላይ',
+  'confirmed': 'ተረጋግጧል',
+  'completed': 'ተጠናቋል',
+  'cancelled': 'ተሰርዟል',
+  'No updates yet.': 'እስካሁን መረጃ የለም።',
+  // Messages
+  'Request received — the laboratory will contact you to confirm.': 'ጥያቄዎ ደርሷል — ላብራቶሪው ለማረጋገጥ ያገኝዎታል።',
+  'Request saved — confirm it in WhatsApp to notify the lab.': 'ጥያቄዎ ተመዝግቧል — ላብራቶሪውን ለማሳወቅ በዋትስአፕ ያረጋግጡ።',
+  'QR code downloaded — ready to print!': 'QR ኮድ ወርዷል — ለማተም ዝግጁ ነው!',
+  'Link copied!': 'አገናኙ ተቀድቷል!',
+  'Wrong PIN.': 'የተሳሳተ ፒን።',
+  'SELECTED': 'የተመረጠ'
+};
+const t = (s) => LANG === 'am' ? (AM[s] || s) : s;
+
+function applyLang(lang) {
+  LANG = lang;
+  localStorage.setItem('zaziwe_lang', lang);
+  document.documentElement.lang = lang === 'am' ? 'am' : 'en';
+  document.body.classList.toggle('lang-am', lang === 'am');
+
+  // Textes statiques
+  document.querySelectorAll('[data-am]').forEach((el) => {
+    if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+    el.innerHTML = lang === 'am' ? el.dataset.am : el.dataset.en;
+  });
+  // Champs de saisie
+  document.querySelectorAll('[data-am-ph]').forEach((el) => {
+    if (el.dataset.enPh === undefined) el.dataset.enPh = el.placeholder;
+    el.placeholder = lang === 'am' ? el.dataset.amPh : el.dataset.enPh;
+  });
+  // Le bouton propose toujours l'AUTRE langue
+  const btn = $('#langToggle');
+  if (btn) { btn.textContent = lang === 'am' ? 'English' : 'አማርኛ'; btn.setAttribute('lang', lang === 'am' ? 'en' : 'am'); }
+
+  // Contenu généré
+  renderTariff(); renderBookings(); renderUpdates(); renderStaff();
+}
+
 /* ===== HELPERS ===== */
 const $ = (sel) => document.querySelector(sel);
 const store = {
@@ -82,7 +152,7 @@ const store = {
     try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* no-op */ }
   }
 };
-const fmtPrice = (p) => p > 0 ? `${CONFIG.currency} ${p}` : 'Ask for price';
+const fmtPrice = (p) => p > 0 ? `${CONFIG.currency} ${p.toLocaleString('en-US')}` : t('Ask for price');
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 function toast(msg, type = '') {
@@ -153,13 +223,14 @@ function bindReveals(root = document) {
 })();
 
 /* ===== CATALOGUE : LISTE TARIFAIRE ===== */
+const A = (s) => t(s);   // alias : « t » est déjà le nom du paramètre test
 function tariffRowHTML(t, i, inModal) {
   return `
     <div class="tariff-row rv-row" data-id="${t.id}" style="--d:${(i % 8) * 60}ms">
-      <span class="name"><span class="state ${t.available ? '' : 'off'}" title="${t.available ? 'Available' : 'Unavailable'}"></span>${esc(t.name)}</span>
+      <span class="name"><span class="state ${t.available ? '' : 'off'}" title="${t.available ? A('Available') : A('Unavailable')}"></span>${esc(t.name)}</span>
       <span class="price">${fmtPrice(t.price)}</span>
-      <button class="select-test" data-select="${t.id}" ${t.available ? '' : 'disabled'}>${inModal ? 'Book' : 'Choose'}</button>
-      ${inModal ? '' : `<button class="edit-test" data-edit="${t.id}">edit</button>`}
+      <button class="select-test" data-select="${t.id}" ${t.available ? '' : 'disabled'}>${inModal ? A('Book') : A('Choose')}</button>
+      ${inModal ? '' : `<button class="edit-test" data-edit="${t.id}">${A('edit')}</button>`}
     </div>`;
 }
 
@@ -184,19 +255,20 @@ function renderTariff() {
 function renderBookingSelect() {
   const sel = $('#bkTest');
   const current = sel.value;
+  // Les 5 formules officielles, avec leurs prix confirmés par le laboratoire
   const packages = [
     ['Diabetes Care Package', 3400], ['Liver & Kidney Health Package', 4100],
     ['Fertility Assessment Package', 6500], ['HIV Care & Monitoring Package', 6000],
     ['Full Body Check-up Package', 5000]
   ];
+  const optTests = tests.filter((x) => x.available)
+    .map((x) => `<option value="${esc(x.name)}">${esc(x.name)} — ${fmtPrice(x.price)}</option>`).join('');
+  const optPacks = packages
+    .map(([p, pr]) => `<option value="${esc(p)}">${esc(t(p))} — ${CONFIG.currency} ${pr.toLocaleString('en-US')}</option>`).join('');
   sel.innerHTML =
-    '<option value="" disabled selected>Choose a test or package…</option>' +
-    '<optgroup label="Tests">' +
-    tests.filter((t) => t.available).map((t) => `<option value="${esc(t.name)}">${esc(t.name)} — ${fmtPrice(t.price)}</option>`).join('') +
-    '</optgroup>' +
-    '<optgroup label="Packages">' +
-    packages.map(([p, pr]) => `<option value="${esc(p)}">${esc(p)} — ${CONFIG.currency} ${pr.toLocaleString('en-US')}</option>`).join('') +
-    '</optgroup>';
+    `<option value="" disabled selected>${t('Choose a test or package…')}</option>` +
+    `<optgroup label="${t('Tests')}">${optTests}</optgroup>` +
+    `<optgroup label="${t('Packages')}">${optPacks}</optgroup>`;
   if (current) sel.value = current;
 }
 
@@ -211,7 +283,7 @@ document.addEventListener('click', (e) => {
     $('#bkTest').value = t.name;
     const disp = $('#selectedTestDisplay');
     disp.style.display = 'block';
-    disp.textContent = `SELECTED — ${t.name.toUpperCase()} · ${fmtPrice(t.price).toUpperCase()}`;
+    disp.textContent = `${t('SELECTED')} — ${t.name.toUpperCase()} · ${fmtPrice(t.price).toUpperCase()}`;
     document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
     $('#bkName').focus({ preventScroll: true });
     return;
@@ -225,7 +297,7 @@ document.querySelectorAll('[data-package]').forEach((btn) => {
     $('#bkTest').value = btn.dataset.package;
     const disp = $('#selectedTestDisplay');
     disp.style.display = 'block';
-    disp.textContent = `SELECTED — ${btn.dataset.package.toUpperCase()}`;
+    disp.textContent = `${t('SELECTED')} — ${btn.dataset.package.toUpperCase()}`;
     document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
     $('#bkName').focus({ preventScroll: true });
   });
@@ -280,7 +352,7 @@ $('#modalSearch').addEventListener('input', renderTariff);
 function renderBookings() {
   const el = $('#bookingList');
   if (!bookings.length) {
-    el.innerHTML = '<p class="booking-empty">No booking requests yet.</p>';
+    el.innerHTML = `<p class="booking-empty">${t('No booking requests yet.')}</p>`;
     return;
   }
   el.innerHTML = bookings.slice(-4).reverse().map((b) => `
@@ -289,7 +361,7 @@ function renderBookings() {
         <strong>${esc(b.test)}</strong>
         <span class="detail">${esc(b.name)} · ${esc(b.date)}</span>
       </div>
-      <span class="status ${b.status}">${b.status}</span>
+      <span class="status ${b.status}">${t(b.status)}</span>
     </div>`).join('');
 }
 
@@ -321,9 +393,9 @@ $('#bookingForm').addEventListener('submit', (e) => {
   const msg = `New booking request%0A- Name: ${encodeURIComponent(booking.name)}%0A- Phone: ${encodeURIComponent(booking.phone)}%0A- Test: ${encodeURIComponent(booking.test)}%0A- Date: ${encodeURIComponent(booking.date)}%0A- Notes: ${encodeURIComponent(booking.notes || '-')}`;
   if (CONFIG.whatsapp) {
     window.open(`https://wa.me/${CONFIG.whatsapp}?text=${msg}`, '_blank');
-    toast('Request saved — confirm it in WhatsApp to notify the lab.', 'success');
+    toast(t('Request saved — confirm it in WhatsApp to notify the lab.'), 'success');
   } else {
-    toast('Request received — the laboratory will contact you to confirm.', 'success');
+    toast(t('Request received — the laboratory will contact you to confirm.'), 'success');
     // Option email : décommenter quand l'adresse est confirmée
     // window.location.href = `mailto:${CONFIG.email}?subject=Booking request&body=${msg}`;
   }
@@ -334,7 +406,7 @@ $('#bkDate').min = new Date().toISOString().split('T')[0];
 /* ===== NEWS ===== */
 function renderUpdates() {
   if (!updates.length) {
-    $('#updateFeed').innerHTML = '<p class="booking-empty" style="padding:1.2rem 0.4rem;">No updates yet.</p>';
+    $('#updateFeed').innerHTML = `<p class="booking-empty" style="padding:1.2rem 0.4rem;">${t('No updates yet.')}</p>`;
     return;
   }
   $('#updateFeed').innerHTML = updates.slice(-8).reverse().map((u, i) => `
@@ -355,11 +427,11 @@ function renderStaff() {
     return `
       <div class="team-row rv-row" style="--d:${i * 100}ms">
         <span class="name">${esc(s.name)}</span>
-        <span class="role">${esc(s.role)}</span>
+        <span class="role">${esc(t(s.role))}</span>
         <span class="links">
-          <a href="tel:${esc(s.phone)}">Call</a>
-          <a href="https://wa.me/${num}" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="https://t.me/${esc(s.phone)}" target="_blank" rel="noopener">Telegram</a>
+          <a href="tel:${esc(s.phone)}">${t('Call')}</a>
+          <a href="https://wa.me/${num}" target="_blank" rel="noopener">${t('WhatsApp')}</a>
+          <a href="https://t.me/${esc(s.phone)}" target="_blank" rel="noopener">${t('Telegram')}</a>
         </span>
       </div>`;
   }).join('');
@@ -418,7 +490,7 @@ $('#staffLoginLink').addEventListener('click', () => {
     toast('Staff mode ON — you can now edit tests and post updates.', 'success');
     document.getElementById('tests').scrollIntoView({ behavior: 'smooth' });
   } else if (pin !== null) {
-    toast('Wrong PIN.');
+    toast(t('Wrong PIN.'));
   }
 });
 
@@ -523,7 +595,7 @@ $('#qrDownload').addEventListener('click', () => {
   a.href = dataUrl;
   a.download = 'zaziwe-labs-qr.png';
   a.click();
-  toast('QR code downloaded — ready to print!', 'success');
+  toast(t('QR code downloaded — ready to print!'), 'success');
 });
 
 $('#shareBtn').addEventListener('click', async () => {
@@ -531,7 +603,7 @@ $('#shareBtn').addEventListener('click', async () => {
   if (navigator.share) {
     try { await navigator.share({ title: 'Zaziwe Medical Laboratories', url }); } catch { /* annulé */ }
   } else {
-    try { await navigator.clipboard.writeText(url); toast('Link copied!', 'success'); }
+    try { await navigator.clipboard.writeText(url); toast(t('Link copied!'), 'success'); }
     catch { toast(url); }
   }
 });
@@ -560,6 +632,8 @@ $('#shareBtn').addEventListener('click', async () => {
 })();
 
 /* ===== INIT ===== */
+$('#langToggle')?.addEventListener('click', () => applyLang(LANG === 'am' ? 'en' : 'am'));
+
 $('#year').textContent = new Date().getFullYear();
 if (sessionStorage.getItem('zaziwe_staff') === '1') setStaffMode(true);
 renderTariff();
@@ -568,3 +642,4 @@ renderUpdates();
 renderStaff();
 initQR();
 bindReveals();
+applyLang(LANG);   // applique la langue mémorisée

@@ -27,6 +27,7 @@
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Instrument Sans', -apple-system, sans-serif;
   --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
+  --font-ethiopic: 'Noto Sans Ethiopic', 'Nyala', sans-serif;
   --step--1: clamp(0.82rem, 0.78rem + 0.2vw, 0.94rem);
   --step-0:  clamp(1rem, 0.95rem + 0.35vw, 1.19rem);
   --step-1:  clamp(1.25rem, 1.15rem + 0.6vw, 1.56rem);
@@ -162,6 +163,55 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; position: relative; }
 .btn-sm { padding: 9px 20px; font-size: 0.9rem; }
 .btn .arrow { font-family: var(--font-body); }
 
+/* ── Bouton de langue (haut à droite) ──────────────────────── */
+.lang-toggle {
+  background: transparent; border: 1px solid var(--wash); color: var(--ink);
+  border-radius: 999px; padding: 7px 16px; cursor: pointer;
+  font-family: var(--font-ethiopic); font-size: 0.82rem; font-weight: 500;
+  line-height: 1.4; white-space: nowrap; order: 4;
+  transition: background 0.25s, border-color 0.25s, color 0.25s, border-radius 0.35s var(--ease-pipette);
+}
+.lang-toggle[lang="en"] { font-family: var(--font-body); }
+.lang-toggle:hover { background: var(--accent); border-color: var(--accent); color: #fff; border-radius: 999px 999px 4px 999px; }
+
+/* ── Amharique : police dédiée et rythme adapté ────────────── */
+body.lang-am,
+body.lang-am .section-title,
+body.lang-am .hero-h1,
+body.lang-am .hero-brand,
+body.lang-am .logo-sub,
+body.lang-am .specimen-label,
+body.lang-am .info-row .k,
+body.lang-am .package-row .head h3,
+body.lang-am .founder-word blockquote,
+body.lang-am .team-row .name,
+body.lang-am .team-row .role,
+body.lang-am .footer-grid h4,
+body.lang-am .panel-label,
+body.lang-am .side-note,
+body.lang-am .hero-facts dt,
+body.lang-am .hero-facts dd,
+body.lang-am .hero-stamp-line,
+body.lang-am .form-group label,
+body.lang-am .btn,
+body.lang-am .nav-links a { font-family: var(--font-ethiopic); }
+/* L'amharique n'a ni italique ni capitales : on neutralise ces effets */
+body.lang-am .section-title em,
+body.lang-am .hero-h1 em,
+body.lang-am .founder-word blockquote { font-style: normal; }
+body.lang-am .specimen-label,
+body.lang-am .hero-facts dt,
+body.lang-am .info-row .k,
+body.lang-am .team-row .role,
+body.lang-am .footer-grid h4,
+body.lang-am .panel-label,
+body.lang-am .side-note,
+body.lang-am .hero-stamp-line,
+body.lang-am .form-group label { text-transform: none; letter-spacing: 0.04em; }
+body.lang-am .hero-h1 { line-height: 1.08; letter-spacing: 0; }
+body.lang-am .section-title { line-height: 1.25; letter-spacing: 0; }
+body.lang-am .wordmark { font-family: var(--font-ethiopic); }
+
 /* ── Header ────────────────────────────────────────────────── */
 header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -176,7 +226,9 @@ header.scrolled {
 }
 nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
 /* Logotype : le mot dessiné, pas une icône dans un carré */
-.logo { display: block; }
+.logo { display: flex; align-items: center; gap: 0.7rem; }
+.logo-mark { width: 46px; height: 46px; flex-shrink: 0; }
+.logo-text { display: block; }
 .logo-name {
   display: block; font-family: var(--font-display); font-weight: 500;
   font-variation-settings: 'opsz' 24, 'SOFT' 60, 'WONK' 1;
@@ -886,7 +938,8 @@ html.js .rv-row.in > *:not(.select-test) { opacity: 1; }
   .nav-links a::after { display: none; }
   .nav-phone { display: none; }
   .nav-cta { margin: 0.6rem 0 0; width: auto; }
-  .hamburger { display: block; }
+  .hamburger { display: block; order: 5; }
+  .lang-toggle { order: 4; margin-left: auto; padding: 6px 12px; font-size: 0.78rem; }
   header { background: rgba(251, 253, 255, 0.92); backdrop-filter: blur(14px); padding: 0.7rem 0; border-bottom: 1px solid var(--wash); }
 
   .catalogue-grid { grid-template-columns: 1fr; }

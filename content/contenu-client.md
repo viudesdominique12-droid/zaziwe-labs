@@ -88,3 +88,30 @@ Urinalysis & Stool · VDRL & TPHA · Vitamin B, Vitamin D · Wet Smear & Gram St
 - Le contenu du package Fertility est plus complet sur la 2e image → c'est celui-là qui est retenu.
 - Coquilles du flyer corrigées à l'intégration (à faire valider) :
   « Homoparasite » → Hemoparasite ; « Heptatis » → Hepatitis ; « Wet Smer » → Wet Smear.
+
+## Réponses complémentaires (2e série de messages)
+- **Prix des packages** : « The prices you used are the correct ones » → 3 400 / 4 100 / 6 500 /
+  6 000 / 5 000 ETB **CONFIRMÉS**. L'autre flyer sert seulement à lire les contenus.
+- **Fondateur** : **Nardos Mekonnen — Founder / CEO** (elle est aussi Laboratory Director).
+- **Nom retenu** : « yeah use the basic one that's fine » → **Zaziwe Basic Medical Laboratory**.
+- **Résultats** : « all options are available » → SMS, Telegram ou retrait au laboratoire.
+- **Ordonnance** : non requise — réservation directe possible, avec ordonnance également acceptée.
+- **Jeûne** : « most tests require fasting » → afficher un avertissement ; le détail viendra avec
+  la liste de prix unitaires.
+- **Prélèvement à domicile** : oui, « in extreme cases like patients who can't move ».
+- **Réseaux** : pas de Facebook ; liens Telegram + Instagram à venir.
+- **Version amharique** : « I do want an amharic version of it as well » → **demandée**.
+- Amharique décodé : « eshi » (እሺ) = d'accord ; « gin » (ግን) = mais ;
+  « mn yishalal » (ምን ይሻላል) = qu'est-ce qui serait le mieux ?
+
+## Photos reçues (à déposer dans assets/)
+logo ZBML · réception/salle d'attente · paillasse microscopes · automate de coagulation CA51 ·
+automate de biochimie. **Photos d'équipe : reportées** (tout le personnel n'était pas présent).
+
+## Reste en attente
+1. Prix unitaires des 26 analyses (+ détail du jeûne par test) — annoncés
+2. Photos de l'équipe
+3. Liens Telegram + Instagram
+4. Version amharique du site
+5. Choix du code staff
+6. Logo en version horizontale / fond transparent (pour l'en-tête)

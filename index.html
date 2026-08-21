@@ -11,11 +11,11 @@
   <meta property="og:description" content="Zaziwe Medical Laboratories delivers world-class diagnostic services with speed, accuracy, and care.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://viudesdominique12-droid.github.io/zaziwe-labs/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 2C32 2 8 26 8 40a24 24 0 0 0 48 0C56 26 32 2 32 2Z' fill='%231B3FA6'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="assets/mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 <body>
   <!-- Préloader -->
@@ -32,22 +32,26 @@
     <div class="container">
       <nav>
         <a href="#home" class="logo" aria-label="Zaziwe Basic Medical Laboratory — home">
-          <span class="logo-name"><em>Zaziwe</em><i class="logo-drop" aria-hidden="true"></i></span>
-          <span class="logo-sub">Basic Medical Laboratory</span>
+          <img class="logo-mark" src="assets/mark.png" alt="" onerror="this.remove()">
+          <span class="logo-text">
+            <span class="logo-name"><em>Zaziwe</em><i class="logo-drop" aria-hidden="true"></i></span>
+            <span class="logo-sub" data-am="ቤዚክ ሜዲካል ላብራቶሪ">Basic Medical Laboratory</span>
+          </span>
         </a>
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
           <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </button>
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">አማርኛ</button>
         <div class="nav-links" id="navLinks">
-          <a href="#home">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#tests" id="navTests">Tests</a>
-          <a href="#packages">Packages</a>
-          <a href="#updates">Updates</a>
-          <a href="#contact">Contact</a>
+          <a href="#home" data-am="መነሻ">Home</a>
+          <a href="#about" data-am="ስለ እኛ">About Us</a>
+          <a href="#tests" id="navTests" data-am="ምርመራዎች">Tests</a>
+          <a href="#packages" data-am="ጥቅሎች">Packages</a>
+          <a href="#updates" data-am="መረጃዎች">Updates</a>
+          <a href="#contact" data-am="አግኙን">Contact</a>
           <!-- Téléphone exact du fichier source -->
           <a href="tel:+251908000077" class="nav-phone">+251 908 000 077</a>
-          <a href="#booking" class="btn btn-primary btn-sm nav-cta">Book Now</a>
+          <a href="#booking" class="btn btn-primary btn-sm nav-cta" data-am="ቀጠሮ ይያዙ">Book Now</a>
         </div>
       </nav>
     </div>
@@ -61,44 +65,44 @@
         <div class="hero-poster">
           <!-- Le nom du laboratoire, en grand et en bleu : on doit savoir
                immédiatement de quel site il s'agit (demande du client) -->
-          <p class="hero-brand"><em>Zaziwe</em> Basic Medical Laboratory</p>
+          <p class="hero-brand"><em>Zaziwe</em> <span data-am="ቤዚክ ሜዲካል ላብራቶሪ">Basic Medical Laboratory</span></p>
           <!-- Horaires : repris du fichier source -->
           <p class="hero-stamp-line" aria-hidden="true">
-            <span>Health packages for every stage of life</span>
+            <span data-am="ለሁሉም የሕይወት ምዕራፍ የሚሆኑ የጤና ጥቅሎች">Health packages for every stage of life</span>
             <span class="sep"></span>
-            <span>Mon–Sat, 8:30am–6:00pm</span>
+            <span data-am="ከሰኞ እስከ ቅዳሜ፣ ከጠዋቱ 8:30 እስከ ከምሽቱ 6:00">Mon–Sat, 8:30am–6:00pm</span>
           </p>
 
           <!-- Titre exact du client : « Your Health, / Our Precision »
                (« Our Precision » était déjà mis en avant dans son code) -->
           <h1 class="hero-h1">
-            <span class="l l1"><span>Your Health,</span></span>
-            <span class="l l2"><span><em class="drawn">Our Precision<svg class="underline" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 70 3, 150 14, 297 5" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg></em></span></span>
+            <span class="l l1"><span data-am="ጤናዎ፣">Your Health,</span></span>
+            <span class="l l2"><span><em class="drawn"><span data-am="ትክክለኛነታችን">Our Precision</span><svg class="underline" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 70 3, 150 14, 297 5" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg></em></span></span>
           </h1>
 
           <div class="hero-inset">
             <!-- Paragraphe exact du client -->
-            <p class="hero-sub">Zaziwe Medical Laboratories delivers world-class diagnostic services with speed, accuracy, and care. Trusted by doctors and patients across the region.</p>
+            <p class="hero-sub" data-am="ዛዚዌ ሜዲካል ላብራቶሪ ዓለም አቀፍ ደረጃውን የጠበቀ የምርመራ አገልግሎት በፍጥነት፣ በትክክለኛነት እና በጥንቃቄ ይሰጣል። በአካባቢው ባሉ ሐኪሞችና ታካሚዎች የታመነ ነው።">Zaziwe Medical Laboratories delivers world-class diagnostic services with speed, accuracy, and care. Trusted by doctors and patients across the region.</p>
             <div class="hero-ctas">
               <!-- Libellés exacts du client -->
-              <a href="#booking" class="btn btn-primary">Book a Test</a>
-              <button type="button" class="btn btn-outline" data-open-tests>View Services</button>
+              <a href="#booking" class="btn btn-primary" data-am="ምርመራ ይያዙ">Book a Test</a>
+              <button type="button" class="btn btn-outline" data-open-tests data-am="አገልግሎቶችን ይመልከቱ">View Services</button>
             </div>
           </div>
 
           <!-- Bandeau de faits : UNIQUEMENT des informations données par le client
                (horaires et contacts du fichier source ; paiement sur place demandé dans son message) -->
           <dl class="hero-facts">
-            <div class="fact"><dt>Opening hours</dt><dd>Mon–Sat<span>8:30am – 6:00pm</span></dd></div>
-            <div class="fact"><dt>Payment</dt><dd class="ok">At the lab<span>cash · telebirr · transfer</span></dd></div>
-            <div class="fact"><dt>Call us</dt><dd><a href="tel:+251908000077">+251 908 000 077</a><span>call · whatsapp · telegram</span></dd></div>
-            <div class="fact"><dt>Results</dt><dd class="ok">Within 24 hours<span>for most tests</span></dd></div>
+            <div class="fact"><dt data-am="የሥራ ሰዓት">Opening hours</dt><dd data-am="ሰኞ – ቅዳሜ<span>8:30 ጠዋት – 6:00 ምሽት</span>">Mon–Sat<span>8:30am – 6:00pm</span></dd></div>
+            <div class="fact"><dt data-am="ክፍያ">Payment</dt><dd class="ok" data-am="በላብራቶሪ ውስጥ<span>ጥሬ ገንዘብ · ቴሌብር · የባንክ ዝውውር</span>">At the lab<span>cash · telebirr · transfer</span></dd></div>
+            <div class="fact"><dt data-am="ይደውሉልን">Call us</dt><dd><a href="tel:+251908000077">+251 908 000 077</a><span data-am="ስልክ · ዋትስአፕ · ቴሌግራም">call · whatsapp · telegram</span></dd></div>
+            <div class="fact"><dt data-am="ውጤት">Results</dt><dd class="ok" data-am="በ24 ሰዓት ውስጥ<span>ለአብዛኞቹ ምርመራዎች</span>">Within 24 hours<span>for most tests</span></dd></div>
           </dl>
         </div>
       </div>
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track" id="marqueeTrack">
-          <span>ACCURATE RESULTS <i class="dot-goutte"></i> TIMELY SERVICE <i class="dot-goutte"></i> TRUSTED CARE <i class="dot-goutte"></i> YOUR HEALTH, OUR PRIORITY <i class="dot-goutte"></i> HEALTH PACKAGES FOR EVERY STAGE OF LIFE <i class="dot-goutte"></i></span>
+          <span data-am="ትክክለኛ ውጤት <i class='dot-goutte'></i> ፈጣን አገልግሎት <i class='dot-goutte'></i> የታመነ እንክብካቤ <i class='dot-goutte'></i> ጤናዎ፣ ቅድሚያችን <i class='dot-goutte'></i> ለሁሉም የሕይወት ምዕራፍ የሚሆኑ የጤና ጥቅሎች <i class='dot-goutte'></i>">ACCURATE RESULTS <i class="dot-goutte"></i> TIMELY SERVICE <i class="dot-goutte"></i> TRUSTED CARE <i class="dot-goutte"></i> YOUR HEALTH, OUR PRIORITY <i class="dot-goutte"></i> HEALTH PACKAGES FOR EVERY STAGE OF LIFE <i class="dot-goutte"></i></span>
         </div>
       </div>
     </section>
@@ -110,21 +114,21 @@
       <span class="rail-label" aria-hidden="true">ZW—LAB / ABOUT US</span>
       <div class="container">
         <div class="specimen-label rv-body">
-          <span>ZW—LAB / ABOUT US</span>
+          <span data-am="ZW—LAB / ስለ እኛ">ZW—LAB / ABOUT US</span>
           <svg class="barcode" width="44" height="12" viewBox="0 0 44 12" fill="currentColor" aria-hidden="true"><rect x="0" width="2" height="12"/><rect x="4" width="1" height="12"/><rect x="7" width="3" height="12"/><rect x="12" width="1" height="12"/><rect x="15" width="2" height="12"/><rect x="19" width="4" height="12"/><rect x="25" width="1" height="12"/><rect x="28" width="2" height="12"/><rect x="32" width="3" height="12"/><rect x="37" width="1" height="12"/><rect x="40" width="2" height="12"/></svg>
         </div>
         <div class="about-grid">
           <div class="about-text">
-            <h2 class="section-title rv-title">Quality <em>Diagnostics</em></h2>
-            <p class="rv-body">Zaziwe Medical Laboratory is a tightly knit family of employees which come derived from the best medical practices in their respective fields, highly trained in patient care, effective speed and quality precise accuracy to help the general public keep healthy and live, laugh and love.</p>
-            <p class="rv-body" style="margin-top:1rem;">Zaziwe Medical Laboratories delivers world-class diagnostic services with speed, accuracy, and care. Trusted by doctors and patients across the region.</p>
+            <h2 class="section-title rv-title" data-am="ጥራት ያለው <em>ምርመራ</em>">Quality <em>Diagnostics</em></h2>
+            <p class="rv-body" data-am="ዛዚዌ ሜዲካል ላብራቶሪ ከየዘርፉ ከምርጥ የሕክምና ተቋማት የተውጣጡ፣ በታካሚ እንክብካቤ፣ በፍጥነትና በጥራት የተመሰከረላቸው ባለሙያዎች ያሉት አንድ የተሳሰረ ቤተሰብ ነው። ዓላማችን ሕዝቡ ጤናማ ሆኖ እንዲኖር፣ እንዲስቅና እንዲወድ መርዳት ነው።">Zaziwe Medical Laboratory is a tightly knit family of employees which come derived from the best medical practices in their respective fields, highly trained in patient care, effective speed and quality precise accuracy to help the general public keep healthy and live, laugh and love.</p>
+            <p class="rv-body" style="margin-top:1rem;" data-am="ዛዚዌ ሜዲካል ላብራቶሪ ዓለም አቀፍ ደረጃውን የጠበቀ የምርመራ አገልግሎት በፍጥነት፣ በትክክለኛነት እና በጥንቃቄ ይሰጣል። በአካባቢው ባሉ ሐኪሞችና ታካሚዎች የታመነ ነው።">Zaziwe Medical Laboratories delivers world-class diagnostic services with speed, accuracy, and care. Trusted by doctors and patients across the region.</p>
           </div>
           <div class="data-strip">
             <!-- Uniquement les coordonnées fournies par le client -->
-            <div class="row rv-row"><span class="num">Mon–Sat</span><span class="lbl">7am – 7pm</span></div>
-            <div class="row rv-row" style="--d:100ms"><span class="num"><a href="tel:+251908000077">+251 908 000 077</a></span><span class="lbl">Phone</span></div>
-            <div class="row rv-row" style="--d:200ms"><span class="num"><a href="mailto:zaziwemedlab@gmail.com">zaziwemedlab@gmail.com</a></span><span class="lbl">Email</span></div>
-            <div class="row rv-row" style="--d:300ms"><span class="num">Selam Tower</span><span class="lbl">Megenagna, near Yeka Sub City — 3rd floor</span></div>
+            <div class="row rv-row"><span class="num" data-am="ሰኞ – ቅዳሜ">Mon–Sat</span><span class="lbl" data-am="8:30 ጠዋት – 6:00 ምሽት">8:30am – 6:00pm</span></div>
+            <div class="row rv-row" style="--d:100ms"><span class="num"><a href="tel:+251908000077">+251 908 000 077</a></span><span class="lbl" data-am="ስልክ">Phone</span></div>
+            <div class="row rv-row" style="--d:200ms"><span class="num"><a href="mailto:zaziwemedlab@gmail.com">zaziwemedlab@gmail.com</a></span><span class="lbl" data-am="ኢሜይል">Email</span></div>
+            <div class="row rv-row" style="--d:300ms"><span class="num" data-am="ሰላም ታወር">Selam Tower</span><span class="lbl" data-am="መገናኛ፣ የካ ክፍለ ከተማ አካባቢ — 3ኛ ፎቅ">Megenagna, near Yeka Sub City — 3rd floor</span></div>
           </div>
         </div>
       </div>
@@ -137,26 +141,26 @@
       <span class="rail-label" aria-hidden="true">ZW—LAB / INSIDE THE LABORATORY</span>
       <div class="container">
         <div class="specimen-label rv-body">
-          <span>ZW—LAB / INSIDE</span>
+          <span data-am="ZW—LAB / ውስጠኛው ክፍል">ZW—LAB / INSIDE</span>
           <svg class="barcode" width="44" height="12" viewBox="0 0 44 12" fill="currentColor" aria-hidden="true"><rect x="0" width="2" height="12"/><rect x="4" width="1" height="12"/><rect x="7" width="3" height="12"/><rect x="12" width="1" height="12"/><rect x="15" width="2" height="12"/><rect x="19" width="4" height="12"/><rect x="25" width="1" height="12"/><rect x="28" width="2" height="12"/><rect x="32" width="3" height="12"/><rect x="37" width="1" height="12"/><rect x="40" width="2" height="12"/></svg>
         </div>
-        <h2 class="section-title rv-title">Inside the <em>laboratory</em></h2>
+        <h2 class="section-title rv-title" data-am="በ<em>ላብራቶሪው</em> ውስጥ">Inside the <em>laboratory</em></h2>
         <div class="gallery" id="gallery">
           <figure class="shot shot-lead rv-body">
             <img src="assets/reception.jpg" alt="Reception and waiting area at Zaziwe Basic Medical Laboratory" onerror="this.closest('figure').remove(); if(!document.querySelector('#gallery figure')){document.getElementById('inside').style.display='none';}">
-            <figcaption>Reception &amp; waiting area</figcaption>
+            <figcaption data-am="አቀባበልና መጠበቂያ">Reception &amp; waiting area</figcaption>
           </figure>
           <figure class="shot rv-body" style="--d:80ms">
             <img src="assets/microscopes.jpg" alt="Microscopes on the laboratory bench" onerror="this.closest('figure').remove(); if(!document.querySelector('#gallery figure')){document.getElementById('inside').style.display='none';}">
-            <figcaption>Microscopy bench</figcaption>
+            <figcaption data-am="የማይክሮስኮፕ ክፍል">Microscopy bench</figcaption>
           </figure>
           <figure class="shot rv-body" style="--d:160ms">
             <img src="assets/coagulation-analyzer.jpg" alt="Coagulation analyser" onerror="this.closest('figure').remove(); if(!document.querySelector('#gallery figure')){document.getElementById('inside').style.display='none';}">
-            <figcaption>Coagulation analyser</figcaption>
+            <figcaption data-am="የደም መርጋት መመርመሪያ">Coagulation analyser</figcaption>
           </figure>
           <figure class="shot rv-body" style="--d:240ms">
             <img src="assets/chemistry-analyzer.jpg" alt="Chemistry analyser" onerror="this.closest('figure').remove(); if(!document.querySelector('#gallery figure')){document.getElementById('inside').style.display='none';}">
-            <figcaption>Chemistry analyser</figcaption>
+            <figcaption data-am="የኬሚስትሪ መመርመሪያ">Chemistry analyser</figcaption>
           </figure>
         </div>
       </div>
@@ -170,65 +174,65 @@
       <span class="rail-label" aria-hidden="true">ZW—CAT / TESTS &amp; PRICES</span>
       <div class="container">
         <div class="specimen-label rv-body">
-          <span>ZW—CAT / TESTS</span>
+          <span data-am="ZW—CAT / ምርመራዎች">ZW—CAT / TESTS</span>
           <svg class="barcode" width="44" height="12" viewBox="0 0 44 12" fill="currentColor" aria-hidden="true"><rect x="0" width="2" height="12"/><rect x="4" width="1" height="12"/><rect x="7" width="3" height="12"/><rect x="12" width="1" height="12"/><rect x="15" width="2" height="12"/><rect x="19" width="4" height="12"/><rect x="25" width="1" height="12"/><rect x="28" width="2" height="12"/><rect x="32" width="3" height="12"/><rect x="37" width="1" height="12"/><rect x="40" width="2" height="12"/></svg>
         </div>
         <div class="catalogue-grid">
           <div class="catalogue-side">
-            <h2 class="section-title rv-title">Our <em>Services</em></h2>
-            <p class="section-sub rv-body">Choose a test or a package to start your booking. Payment is made at the laboratory.</p>
+            <h2 class="section-title rv-title" data-am="<em>አገልግሎቶቻችን</em>">Our <em>Services</em></h2>
+            <p class="section-sub rv-body" data-am="ቀጠሮ ለመያዝ ምርመራ ወይም ጥቅል ይምረጡ። ክፍያ የሚፈጸመው በላብራቶሪው ውስጥ ነው።">Choose a test or a package to start your booking. Payment is made at the laboratory.</p>
             <div class="catalogue-search rv-body" style="--d:80ms">
               <label for="catalogueSearch" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Search a test</label>
-              <input type="text" id="catalogueSearch" placeholder="Search a test…">
+              <input type="text" id="catalogueSearch" placeholder="Search a test…" data-am-ph="ምርመራ ይፈልጉ…">
             </div>
-            <p class="side-note rv-body" style="--d:140ms">INDIVIDUAL TEST PRICES ON REQUEST — CALL OR MESSAGE US.</p>
+            <p class="side-note rv-body" style="--d:140ms" data-am="የነጠላ ምርመራ ዋጋ በጥያቄ ይሰጣል — ይደውሉልን ወይም መልእክት ይላኩልን።">INDIVIDUAL TEST PRICES ON REQUEST — CALL OR MESSAGE US.</p>
             <p class="needs-note"><span class="n">2</span><span><strong>Unit prices for individual tests.</strong> You said you'd send them with the fasting details — as soon as they arrive I put them in. <em>You can also add them yourself: STAFF ACCESS at the very bottom of the page.</em></span></p>
           </div>
           <div>
             <div class="tariff-list" id="tariffList" aria-live="polite"></div>
-            <p class="modal-empty" id="tariffEmpty" style="display:none; color:var(--muted);">No test matches your search.</p>
+            <p class="modal-empty" id="tariffEmpty" style="display:none; color:var(--muted);" data-am="ከፍለጋዎ ጋር የሚዛመድ ምርመራ የለም።">No test matches your search.</p>
 
             <!-- ⚠️ Formules PROVISOIRES — contenu et prix à fournir par le client -->
             <div class="packages-panel" id="packages">
-              <span class="panel-label">OUR HEALTH PACKAGES — FOR EVERY STAGE OF LIFE</span>
+              <span class="panel-label" data-am="የጤና ጥቅሎቻችን — ለሁሉም የሕይወት ምዕራፍ">OUR HEALTH PACKAGES — FOR EVERY STAGE OF LIFE</span>
               <div class="package-row rv-row">
-                <div class="head"><h3>Diabetes Care Package</h3></div>
+                <div class="head"><h3 data-am="የስኳር በሽታ እንክብካቤ ጥቅል">Diabetes Care Package</h3></div>
                 <div class="desc"><span class="incl">GLUCOSE · HbA1c · INSULIN · LIPID PROFILE · KIDNEY FUNCTION TEST · URINALYSIS</span>
-                  <span class="foot">FBS if not included in package</span>
+                  <span class="foot" data-am="* FBS በጥቅሉ ውስጥ ካልተካተተ">FBS if not included in package</span>
                 </div>
-                <div class="price">ETB 3,400<span class="per">per package</span></div>
-                <button class="btn btn-outline btn-sm" data-package="Diabetes Care Package">Book</button>
+                <div class="price">ETB 3,400<span class="per" data-am="በጥቅል">per package</span></div>
+                <button class="btn btn-outline btn-sm" data-package="Diabetes Care Package" data-am="ይያዙ">Book</button>
               </div>
               <div class="package-row rv-row" style="--d:80ms">
-                <div class="head"><h3>Liver &amp; Kidney Health Package</h3></div>
+                <div class="head"><h3 data-am="የጉበትና የኩላሊት ጤና ጥቅል">Liver &amp; Kidney Health Package</h3></div>
                 <div class="desc"><span class="incl">LIVER FUNCTION TEST · RENAL FUNCTION TEST · ELECTROLYTES · URIC ACID · URINALYSIS</span></div>
-                <div class="price">ETB 4,100<span class="per">per package</span></div>
-                <button class="btn btn-outline btn-sm" data-package="Liver &amp; Kidney Health Package">Book</button>
+                <div class="price">ETB 4,100<span class="per" data-am="በጥቅል">per package</span></div>
+                <button class="btn btn-outline btn-sm" data-package="Liver &amp; Kidney Health Package" data-am="ይያዙ">Book</button>
               </div>
               <div class="package-row rv-row" style="--d:160ms">
-                <div class="head"><h3>Fertility Assessment Package</h3></div>
-                <div class="desc"><span class="incl">FOR FEMALE — HORMONE TESTS* · FERTILITY PROFILE* · URINALYSIS</span>
-                  <span class="incl">FOR MALE — SEMEN ANALYSIS · HORMONE TESTS*</span>
-                  <span class="foot">* Selected hormone tests</span>
+                <div class="head"><h3 data-am="የመራባት ምርመራ ጥቅል">Fertility Assessment Package</h3></div>
+                <div class="desc"><span class="incl" data-am="ለሴቶች — HORMONE TESTS* · FERTILITY PROFILE* · URINALYSIS">FOR FEMALE — HORMONE TESTS* · FERTILITY PROFILE* · URINALYSIS</span>
+                  <span class="incl" data-am="ለወንዶች — SEMEN ANALYSIS · HORMONE TESTS*">FOR MALE — SEMEN ANALYSIS · HORMONE TESTS*</span>
+                  <span class="foot" data-am="* የተመረጡ የሆርሞን ምርመራዎች">* Selected hormone tests</span>
                 </div>
-                <div class="price">ETB 6,500<span class="per">per package</span></div>
-                <button class="btn btn-outline btn-sm" data-package="Fertility Assessment Package">Book</button>
+                <div class="price">ETB 6,500<span class="per" data-am="በጥቅል">per package</span></div>
+                <button class="btn btn-outline btn-sm" data-package="Fertility Assessment Package" data-am="ይያዙ">Book</button>
               </div>
               <div class="package-row rv-row" style="--d:240ms">
-                <div class="head"><h3>HIV Care &amp; Monitoring Package</h3></div>
+                <div class="head"><h3 data-am="የኤች አይ ቪ እንክብካቤና ክትትል ጥቅል">HIV Care &amp; Monitoring Package</h3></div>
                 <div class="desc"><span class="incl">HIV TEST · CD4 · HIV VIRAL LOAD</span></div>
-                <div class="price">ETB 6,000<span class="per">per package</span></div>
-                <button class="btn btn-outline btn-sm" data-package="HIV Care &amp; Monitoring Package">Book</button>
+                <div class="price">ETB 6,000<span class="per" data-am="በጥቅል">per package</span></div>
+                <button class="btn btn-outline btn-sm" data-package="HIV Care &amp; Monitoring Package" data-am="ይያዙ">Book</button>
               </div>
               <div class="package-row rv-row" style="--d:320ms">
-                <div class="head"><h3>Full Body Check-up Package</h3></div>
+                <div class="head"><h3 data-am="የሙሉ ሰውነት ምርመራ ጥቅል">Full Body Check-up Package</h3></div>
                 <div class="desc"><span class="incl">COMPLETE BLOOD COUNT · GLUCOSE · HbA1c · LIVER FUNCTION TEST · RENAL FUNCTION TEST · LIPID PROFILE · ELECTROLYTES · URINALYSIS</span></div>
-                <div class="price">ETB 5,000<span class="per">per package</span></div>
-                <button class="btn btn-primary btn-sm" data-package="Full Body Check-up Package">Book</button>
+                <div class="price">ETB 5,000<span class="per" data-am="በጥቅል">per package</span></div>
+                <button class="btn btn-primary btn-sm" data-package="Full Body Check-up Package" data-am="ይያዙ">Book</button>
               </div>
               <p class="custom-package">
-                <strong>Need a custom package?</strong> Talk to our team and get a package that fits your health needs.
-                <a href="tel:+251908000077">Call +251 908 000 077</a>
+                <span data-am="<strong>የተለየ ጥቅል ይፈልጋሉ?</strong> ከቡድናችን ጋር ተነጋግረው ለጤናዎ የሚስማማ ጥቅል ያግኙ።"><strong>Need a custom package?</strong> Talk to our team and get a package that fits your health needs.</span>
+                <a href="tel:+251908000077" data-am="ይደውሉ +251 908 000 077">Call +251 908 000 077</a>
               </p>
             </div>
 
@@ -271,70 +275,70 @@
       <span class="rail-label" aria-hidden="true">ZW—RDV / BOOK NOW</span>
       <div class="container">
         <div class="specimen-label rv-body">
-          <span>ZW—RDV / BOOK NOW</span>
+          <span data-am="ZW—RDV / ቀጠሮ">ZW—RDV / BOOK NOW</span>
           <svg class="barcode" width="44" height="12" viewBox="0 0 44 12" fill="currentColor" aria-hidden="true"><rect x="0" width="2" height="12"/><rect x="4" width="1" height="12"/><rect x="7" width="3" height="12"/><rect x="12" width="1" height="12"/><rect x="15" width="2" height="12"/><rect x="19" width="4" height="12"/><rect x="25" width="1" height="12"/><rect x="28" width="2" height="12"/><rect x="32" width="3" height="12"/><rect x="37" width="1" height="12"/><rect x="40" width="2" height="12"/></svg>
         </div>
-        <h2 class="section-title rv-title">Book a <em>Test</em></h2>
-        <p class="section-sub rv-body" style="margin-bottom:2.5rem;">Send your request and the laboratory will contact you to confirm.</p>
+        <h2 class="section-title rv-title" data-am="<em>ምርመራ</em> ይያዙ">Book a <em>Test</em></h2>
+        <p class="section-sub rv-body" style="margin-bottom:2.5rem;" data-am="ጥያቄዎን ይላኩ፤ ላብራቶሪው ለማረጋገጥ ያገኝዎታል።">Send your request and the laboratory will contact you to confirm.</p>
         <div class="booking-grid">
           <div class="booking-fiche rv-body">
             <div class="stamp" id="stamp" aria-hidden="true">
               <span>ZAZIWE</span>
-              <span class="big">RECEIVED</span>
+              <span class="big" data-am="ደርሷል">RECEIVED</span>
               <span>LABS</span>
             </div>
             <div class="fiche-head">
-              <span>BOOKING FORM</span>
-              <span>PAY AT THE LAB</span>
+              <span data-am="የቀጠሮ ቅጽ">BOOKING FORM</span>
+              <span data-am="ክፍያ በላብራቶሪ">PAY AT THE LAB</span>
             </div>
             <div class="selected-test-display" id="selectedTestDisplay"></div>
             <form id="bookingForm">
               <div class="form-row">
                 <div class="form-group">
-                  <label for="bkName">Full name</label>
-                  <input type="text" id="bkName" required autocomplete="name" placeholder="Your name">
+                  <label for="bkName" data-am="ሙሉ ስም">Full name</label>
+                  <input type="text" id="bkName" required autocomplete="name" placeholder="Your name" data-am-ph="ስምዎ">
                 </div>
                 <div class="form-group">
-                  <label for="bkPhone">Phone number</label>
-                  <input type="tel" id="bkPhone" required autocomplete="tel" placeholder="Phone number">
+                  <label for="bkPhone" data-am="ስልክ ቁጥር">Phone number</label>
+                  <input type="tel" id="bkPhone" required autocomplete="tel" placeholder="Phone number" data-am-ph="ስልክ ቁጥር">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="bkTest">Test or package</label>
+                  <label for="bkTest" data-am="ምርመራ ወይም ጥቅል">Test or package</label>
                   <select id="bkTest" required></select>
                 </div>
                 <div class="form-group">
-                  <label for="bkDate">Preferred date</label>
+                  <label for="bkDate" data-am="የሚፈልጉት ቀን">Preferred date</label>
                   <input type="date" id="bkDate" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="bkNotes">Notes <span style="opacity:.6">(optional)</span></label>
-                <textarea id="bkNotes" placeholder="Anything we should know"></textarea>
+                <label for="bkNotes" data-am="ማስታወሻ <span style='opacity:.6'>(ካስፈለገ)</span>">Notes <span style="opacity:.6">(optional)</span></label>
+                <textarea id="bkNotes" placeholder="Anything we should know" data-am-ph="ማወቅ ያለብን ነገር ካለ"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary" style="width:100%;">Book a Test</button>
-              <p class="booking-call-hint">Or call us: <a href="tel:+251908000077">+251 908 000 077</a></p>
+              <button type="submit" class="btn btn-primary" style="width:100%;" data-am="ምርመራ ይያዙ">Book a Test</button>
+              <p class="booking-call-hint" data-am="ወይም ይደውሉልን፦ <a href='tel:+251908000077'>+251 908 000 077</a>">Or call us: <a href="tel:+251908000077">+251 908 000 077</a></p>
             </form>
             <!-- Paiement sur place : demandé explicitement par le client -->
             <div class="payment-notice">
-              <h4>Pay at the laboratory</h4>
-              <p>Payment is made in person at the laboratory. Online payment will be added later.</p>
-              <div class="payment-methods"><span>Cash</span><span>telebirr</span><span>Bank transfer</span></div>
+              <h4 data-am="ክፍያ በላብራቶሪ ውስጥ">Pay at the laboratory</h4>
+              <p data-am="ክፍያ በአካል በላብራቶሪው ውስጥ ይፈጸማል። የኦንላይን ክፍያ ወደፊት ይጨመራል።">Payment is made in person at the laboratory. Online payment will be added later.</p>
+              <div class="payment-methods" data-am="<span>ጥሬ ገንዘብ</span><span>ቴሌብር</span><span>የባንክ ዝውውር</span>"><span>Cash</span><span>telebirr</span><span>Bank transfer</span></div>
             </div>
           </div>
           <div class="booking-aside">
             <div class="aside-panel rv-body" style="--d:80ms">
-              <h3>Contact</h3>
+              <h3 data-am="አግኙን">Contact</h3>
               <div class="phones">
-                <p><span class="k">Call</span> <a href="tel:+251908000077">+251 908 000 077</a></p>
-                <p><span class="k">Write</span> <a href="mailto:zaziwemedlab@gmail.com">zaziwemedlab@gmail.com</a></p>
-                <p><span class="k">Open</span> <span>Mon–Sat, 8:30am–6:00pm</span></p>
+                <p><span class="k" data-am="ደውሉ">Call</span> <a href="tel:+251908000077">+251 908 000 077</a></p>
+                <p><span class="k" data-am="ኢሜይል">Write</span> <a href="mailto:zaziwemedlab@gmail.com">zaziwemedlab@gmail.com</a></p>
+                <p><span class="k" data-am="ሰዓት">Open</span> <span data-am="ሰኞ – ቅዳሜ፣ 8:30 – 6:00">Mon–Sat, 8:30am–6:00pm</span></p>
               </div>
             </div>
             <div class="aside-panel rv-body" style="--d:160ms">
-              <h3>Your recent requests</h3>
-              <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.6rem;">Requests made from this device.</p>
+              <h3 data-am="የቅርብ ጊዜ ጥያቄዎችዎ">Your recent requests</h3>
+              <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.6rem;" data-am="ከዚህ መሣሪያ የተላኩ ጥያቄዎች።">Requests made from this device.</p>
               <div class="booking-list" id="bookingList"></div>
             </div>
           </div>
@@ -348,30 +352,30 @@
       <span class="rail-label" aria-hidden="true">ZW—INFO / BEFORE YOUR VISIT</span>
       <div class="container">
         <div class="specimen-label rv-body">
-          <span>ZW—INFO / BEFORE YOUR VISIT</span>
+          <span data-am="ZW—INFO / ከመምጣትዎ በፊት">ZW—INFO / BEFORE YOUR VISIT</span>
           <svg class="barcode" width="44" height="12" viewBox="0 0 44 12" fill="currentColor" aria-hidden="true"><rect x="0" width="2" height="12"/><rect x="4" width="1" height="12"/><rect x="7" width="3" height="12"/><rect x="12" width="1" height="12"/><rect x="15" width="2" height="12"/><rect x="19" width="4" height="12"/><rect x="25" width="1" height="12"/><rect x="28" width="2" height="12"/><rect x="32" width="3" height="12"/><rect x="37" width="1" height="12"/><rect x="40" width="2" height="12"/></svg>
         </div>
-        <h2 class="section-title rv-title" style="font-size:var(--step-3);">Before your visit</h2>
+        <h2 class="section-title rv-title" style="font-size:var(--step-3);" data-am="ከመምጣትዎ በፊት">Before your visit</h2>
         <div class="info-list">
           <div class="info-row rv-row">
-            <span class="k">Fasting</span>
-            <span class="v"><strong>Most tests require fasting.</strong> Please ask us when you book — we will tell you exactly how to prepare for the test you have chosen.</span>
+            <span class="k" data-am="ባዶ ሆድ">Fasting</span>
+            <span class="v" data-am="<strong>አብዛኞቹ ምርመራዎች ባዶ ሆድ መሆንን ይጠይቃሉ።</strong> ቀጠሮ ሲይዙ ይጠይቁን — ለመረጡት ምርመራ እንዴት መዘጋጀት እንዳለብዎት በዝርዝር እንነግርዎታለን።"><strong>Most tests require fasting.</strong> Please ask us when you book — we will tell you exactly how to prepare for the test you have chosen.</span>
           </div>
           <div class="info-row rv-row" style="--d:80ms">
-            <span class="k">Referral</span>
-            <span class="v">Not required. You can book any test directly, or come with a referral from your doctor — both are accepted.</span>
+            <span class="k" data-am="የሐኪም ማዘዣ">Referral</span>
+            <span class="v" data-am="አያስፈልግም። ማንኛውንም ምርመራ በቀጥታ መያዝ ይችላሉ፤ ወይም ከሐኪምዎ ማዘዣ ይዘው መምጣት ይችላሉ — ሁለቱም ተቀባይነት አላቸው።">Not required. You can book any test directly, or come with a referral from your doctor — both are accepted.</span>
           </div>
           <div class="info-row rv-row" style="--d:160ms">
-            <span class="k">Results</span>
-            <span class="v">Most tests are completed within 24 hours. You can receive your results by SMS, by Telegram, or collect them at the laboratory — all options are available.</span>
+            <span class="k" data-am="ውጤት">Results</span>
+            <span class="v" data-am="አብዛኞቹ ምርመራዎች በ24 ሰዓት ውስጥ ይጠናቀቃሉ። ውጤትዎን በኤስኤምኤስ፣ በቴሌግራም ወይም በላብራቶሪው ውስጥ በአካል መውሰድ ይችላሉ — ሁሉም አማራጮች አሉ።">Most tests are completed within 24 hours. You can receive your results by SMS, by Telegram, or collect them at the laboratory — all options are available.</span>
           </div>
           <div class="info-row rv-row" style="--d:240ms">
-            <span class="k">Home collection</span>
-            <span class="v">Available in special cases, for patients who are unable to travel. Call us to arrange it.</span>
+            <span class="k" data-am="ናሙና ከቤት">Home collection</span>
+            <span class="v" data-am="መንቀሳቀስ ለማይችሉ ታካሚዎች በልዩ ሁኔታ ይሰጣል። ለማዘጋጀት ይደውሉልን።">Available in special cases, for patients who are unable to travel. Call us to arrange it.</span>
           </div>
           <div class="info-row rv-row" style="--d:320ms">
-            <span class="k">Payment</span>
-            <span class="v">At the laboratory — cash, telebirr or bank transfer.</span>
+            <span class="k" data-am="ክፍያ">Payment</span>
+            <span class="v" data-am="በላብራቶሪው ውስጥ — ጥሬ ገንዘብ፣ ቴሌብር ወይም የባንክ ዝውውር።">At the laboratory — cash, telebirr or bank transfer.</span>
           </div>
         </div>
       </div>
@@ -384,16 +388,16 @@
       <span class="rail-label" aria-hidden="true">ZW—EQ / CONTACT</span>
       <div class="container">
         <div class="specimen-label rv-body">
-          <span>ZW—EQ / CONTACT</span>
+          <span data-am="ZW—EQ / አግኙን">ZW—EQ / CONTACT</span>
           <svg class="barcode" width="44" height="12" viewBox="0 0 44 12" fill="currentColor" aria-hidden="true"><rect x="0" width="2" height="12"/><rect x="4" width="1" height="12"/><rect x="7" width="3" height="12"/><rect x="12" width="1" height="12"/><rect x="15" width="2" height="12"/><rect x="19" width="4" height="12"/><rect x="25" width="1" height="12"/><rect x="28" width="2" height="12"/><rect x="32" width="3" height="12"/><rect x="37" width="1" height="12"/><rect x="40" width="2" height="12"/></svg>
         </div>
-        <h2 class="section-title rv-title">Contact the <em>team</em></h2>
-        <p class="section-sub rv-body" style="margin-bottom:2.5rem;">Call, WhatsApp or Telegram a member of the laboratory directly.</p>
+        <h2 class="section-title rv-title" data-am="<em>ቡድናችንን</em> ያግኙ">Contact the <em>team</em></h2>
+        <p class="section-sub rv-body" style="margin-bottom:2.5rem;" data-am="የላብራቶሪውን ባልደረባ በስልክ፣ በዋትስአፕ ወይም በቴሌግራም በቀጥታ ያግኙ።">Call, WhatsApp or Telegram a member of the laboratory directly.</p>
         <div class="team-list" id="staffList"></div>
         <p class="needs-note"><span class="n">1</span><span><strong>Team photos still to come.</strong> No problem that the whole staff wasn't in — send portraits whenever they're all there and I'll add them next to their names.</span></p>
         <div class="founder-word rv-body">
-          <blockquote>In my almost 4 decades of experience I have accumulated vast amounts of knowledge in my field of work, all considering to make lab work more efficient and welcoming to the general public. It has always been a dream and a driving force for me to revolutionize the principles of medical practice.<br><br>And we at Zaziwe labs await for our patients with open arms.</blockquote>
-          <p class="sig"><strong>Nardos Mekonnen</strong> — FOUNDER / CEO, ZAZIWE BASIC MEDICAL LABORATORY</p>
+          <blockquote data-am="በአርባ ዓመታት ገደማ የሥራ ልምዴ በሙያዬ ሰፊ ዕውቀት አካብቻለሁ፤ ይህም ሁሉ የላብራቶሪ ሥራን ይበልጥ ውጤታማና ለሕዝቡ ተደራሽ ለማድረግ ነው። የሕክምና አሠራርን መርሆች መለወጥ ሁልጊዜም ሕልሜና የጉልበቴ ምንጭ ሆኖ ቆይቷል።<br><br>እኛ በዛዚዌ ላብራቶሪ ታካሚዎቻችንን በክፍት እጆች እንጠብቃለን።">In my almost 4 decades of experience I have accumulated vast amounts of knowledge in my field of work, all considering to make lab work more efficient and welcoming to the general public. It has always been a dream and a driving force for me to revolutionize the principles of medical practice.<br><br>And we at Zaziwe labs await for our patients with open arms.</blockquote>
+          <p class="sig" data-am="<strong>ናርዶስ መኮንን</strong> — መሥራችና ዋና ሥራ አስፈጻሚ፣ ዛዚዌ ቤዚክ ሜዲካል ላብራቶሪ"><strong>Nardos Mekonnen</strong> — FOUNDER / CEO, ZAZIWE BASIC MEDICAL LABORATORY</p>
         </div>
       </div>
     </section>
@@ -404,10 +408,10 @@
       <span class="rail-label" aria-hidden="true">ZW—COM / UPDATES</span>
       <div class="container">
         <div class="specimen-label rv-body">
-          <span>ZW—COM / UPDATES</span>
+          <span data-am="ZW—COM / መረጃዎች">ZW—COM / UPDATES</span>
           <svg class="barcode" width="44" height="12" viewBox="0 0 44 12" fill="currentColor" aria-hidden="true"><rect x="0" width="2" height="12"/><rect x="4" width="1" height="12"/><rect x="7" width="3" height="12"/><rect x="12" width="1" height="12"/><rect x="15" width="2" height="12"/><rect x="19" width="4" height="12"/><rect x="25" width="1" height="12"/><rect x="28" width="2" height="12"/><rect x="32" width="3" height="12"/><rect x="37" width="1" height="12"/><rect x="40" width="2" height="12"/></svg>
         </div>
-        <h2 class="section-title rv-title" style="font-size:var(--step-3);">Updates</h2>
+        <h2 class="section-title rv-title" style="font-size:var(--step-3);" data-am="መረጃዎች">Updates</h2>
         <div class="update-feed" id="updateFeed" style="margin-top:2rem;"></div>
         <p class="needs-note"><span class="n">3</span><span><strong>This news feed is yours to fill.</strong> Click <strong>STAFF ACCESS</strong> at the bottom of the page (PIN <em>1234</em> — change it before going live) and post your announcements: new tests, holiday hours, promotions.</span></p>
       </div>
@@ -418,9 +422,9 @@
   <footer class="coda">
     <div class="container">
       <div class="coda-cta">
-        <h2 class="section-title rv-title">Book a <em>Test</em></h2>
+        <h2 class="section-title rv-title" data-am="<em>ምርመራ</em> ይያዙ">Book a <em>Test</em></h2>
         <div class="hero-ctas rv-body" style="--d:80ms">
-          <a href="#booking" class="btn btn-nuit">Book Now</a>
+          <a href="#booking" class="btn btn-nuit" data-am="አሁን ይያዙ">Book Now</a>
           <a href="tel:+251908000077" class="btn btn-ghost-nuit">+251 908 000 077</a>
         </div>
       </div>
@@ -434,48 +438,48 @@
           <a href="#home" class="logo">
             <span class="logo-name"><em>Zaziwe</em><i class="logo-drop" aria-hidden="true"></i></span>
           </a>
-          <p class="footer-tagline">Accurate Today, Healthier Tomorrow.</p>
+          <p class="footer-tagline" data-am="ዛሬ ትክክለኛ፣ ነገ ጤናማ።">Accurate Today, Healthier Tomorrow.</p>
         </div>
         <div>
-          <h4>Explore</h4>
+          <h4 data-am="ዝርዝሮች">Explore</h4>
           <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#tests">Tests</a></li>
-            <li><a href="#packages">Packages</a></li>
-            <li><a href="#updates">Updates</a></li>
-            <li><a href="#booking">Book Now</a></li>
+            <li><a href="#about" data-am="ስለ እኛ">About Us</a></li>
+            <li><a href="#tests" data-am="ምርመራዎች">Tests</a></li>
+            <li><a href="#packages" data-am="ጥቅሎች">Packages</a></li>
+            <li><a href="#updates" data-am="መረጃዎች">Updates</a></li>
+            <li><a href="#booking" data-am="ቀጠሮ ይያዙ">Book Now</a></li>
           </ul>
         </div>
         <div>
-          <h4>Contact</h4>
+          <h4 data-am="አግኙን">Contact</h4>
           <ul>
-            <li><span class="k">Tel</span> +251 908 000 077</li>
-            <li><span class="k">Mail</span> zaziwemedlab@gmail.com</li>
-            <li><span class="k">Open</span> Mon–Sat, 8:30am–6:00pm</li>
-            <li><span class="k">Find</span> Megenagna, Selam Tower, 3rd floor</li>
+            <li><span class="k" data-am="ስልክ">Tel</span> +251 908 000 077</li>
+            <li><span class="k" data-am="ኢሜይል">Mail</span> zaziwemedlab@gmail.com</li>
+            <li><span class="k" data-am="ሰዓት">Open</span> <span data-am="ሰኞ – ቅዳሜ፣ 8:30 – 6:00">Mon–Sat, 8:30am–6:00pm</span></li>
+            <li><span class="k" data-am="አድራሻ">Find</span> <span data-am="መገናኛ፣ ሰላም ታወር፣ 3ኛ ፎቅ">Megenagna, Selam Tower, 3rd floor</span></li>
           </ul>
         </div>
         <div class="footer-qr">
-          <h4>Website QR</h4>
+          <h4 data-am="የድረ-ገጽ QR">Website QR</h4>
           <div class="qr-box" id="qrBox"></div>
-          <p>Scan to open this website.</p>
-          <button class="btn btn-ghost-nuit btn-sm" id="qrDownload">Download QR</button>
-          <button class="btn btn-ghost-nuit btn-sm footer-share" id="shareBtn">Share this site</button>
+          <p data-am="ይህን ድረ-ገጽ ለመክፈት ይቃኙ።">Scan to open this website.</p>
+          <button class="btn btn-ghost-nuit btn-sm" id="qrDownload" data-am="QR ያውርዱ">Download QR</button>
+          <button class="btn btn-ghost-nuit btn-sm footer-share" id="shareBtn" data-am="ድረ-ገጹን ያጋሩ">Share this site</button>
         </div>
       </div>
       <div class="wordmark" aria-hidden="true">ZAZIWE</div>
       <div class="footer-bottom">
         <span>© <span id="year"></span> ZAZIWE MEDICAL LABORATORIES</span>
-        <button type="button" class="staff-login-link" id="staffLoginLink" title="Staff access">STAFF ACCESS</button>
+        <button type="button" class="staff-login-link" id="staffLoginLink" title="Staff access" data-am="የሠራተኛ መግቢያ">STAFF ACCESS</button>
       </div>
     </div>
   </footer>
 
   <!-- ═══════════ BARRE D'ACTION MOBILE ═══════════ -->
   <div class="mobile-action-bar" id="mobileBar">
-    <a href="#booking" class="btn btn-primary">Book</a>
-    <a href="tel:+251908000077" class="btn btn-ghost-nuit">Call</a>
-    <a href="#contact" class="btn btn-ghost-nuit" id="mobileChat">Chat</a>
+    <a href="#booking" class="btn btn-primary" data-am="ይያዙ">Book</a>
+    <a href="tel:+251908000077" class="btn btn-ghost-nuit" data-am="ደውሉ">Call</a>
+    <a href="#contact" class="btn btn-ghost-nuit" id="mobileChat" data-am="መልእክት">Chat</a>
   </div>
 
   <!-- ═══════════ MODALE TESTS (demande explicite du client) ═══════════ -->
@@ -483,18 +487,18 @@
     <div class="modal">
       <div class="modal-header">
         <div>
-          <span class="m-label">ZW—CAT / FULL SERVICE LIST</span>
-          <h3 id="testsModalTitle">Our Services</h3>
+          <span class="m-label" data-am="ZW—CAT / ሙሉ የአገልግሎት ዝርዝር">ZW—CAT / FULL SERVICE LIST</span>
+          <h3 id="testsModalTitle" data-am="አገልግሎቶቻችን">Our Services</h3>
         </div>
         <button class="modal-close" id="testsModalClose" aria-label="Close">×</button>
       </div>
       <div class="modal-search">
         <label for="modalSearch" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Search a test</label>
-        <input type="text" id="modalSearch" placeholder="Search a test…">
+        <input type="text" id="modalSearch" placeholder="Search a test…" data-am-ph="ምርመራ ይፈልጉ…">
       </div>
       <div class="modal-body">
         <div class="tariff-list" id="modalTestGrid"></div>
-        <p class="modal-empty" id="modalEmpty" style="display:none;">No test matches your search.</p>
+        <p class="modal-empty" id="modalEmpty" style="display:none;" data-am="ከፍለጋዎ ጋር የሚዛመድ ምርመራ የለም።">No test matches your search.</p>
       </div>
     </div>
   </div>
@@ -510,6 +514,6 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha384-3zSEDfvllQohrq0PHL1fOXJuC/jSOO34H46t6UQfobFOmxE5BpjjaIJY5F2/bMnU" crossorigin="anonymous"></script>
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=3"></script>
 </body>
 </html>
