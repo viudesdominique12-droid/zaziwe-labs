@@ -700,6 +700,50 @@ body.staff-mode .staff-panel { display: block; }
 .modal-body .tariff-row .select-test:hover { background: var(--nuit-ink); color: var(--nuit); }
 .modal-empty { text-align: center; color: var(--nuit-muted); padding: 2rem 0; }
 
+/* ── Galerie « Inside the lab » ─────────────────────────────
+   Grille éditoriale : une photo maîtresse + trois cadrages
+   d'équipement. Traitement léger et froid, cohérent avec la
+   porcelaine du site — la photo reste crédible, jamais filtrée. */
+.gallery {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: clamp(0.8rem, 1.6vw, 1.4rem); margin-top: 2.5rem;
+}
+.shot { margin: 0; position: relative; }
+.shot img {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: 16px; border: 1px solid var(--wash);
+  filter: saturate(0.88) contrast(1.03) brightness(1.02);
+  transition: filter 0.5s var(--ease-pipette), transform 0.5s var(--ease-pipette);
+}
+.shot:hover img { filter: saturate(1) contrast(1.05) brightness(1.03); transform: scale(1.01); }
+.shot figcaption {
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin-top: 0.6rem;
+}
+.shot-lead { grid-column: span 6; }
+.shot-lead img { aspect-ratio: 16 / 9; }
+.shot:not(.shot-lead) { grid-column: span 2; }
+.shot:not(.shot-lead) img { aspect-ratio: 4 / 3; }
+
+/* ── « Before your visit » : les réponses du laboratoire ───── */
+.info-list { border-top: 1px solid var(--ink); margin-top: 2rem; max-width: 900px; }
+.info-row {
+  display: grid; grid-template-columns: 10rem minmax(0, 1fr);
+  gap: 1.4rem; padding: 1.2rem 0.4rem; border-bottom: 1px solid var(--wash);
+}
+.info-row .k {
+  font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent); padding-top: 0.2rem;
+}
+.info-row .v { color: var(--muted); }
+.info-row .v strong { color: var(--ink); }
+
+/* ── Logo réel dans le pied de page ────────────────────────── */
+.footer-logo {
+  width: 108px; height: auto; border-radius: 12px;
+  background: #fff; padding: 6px; margin-bottom: 1rem;
+}
+
 /* ── Composition des packages + encart « custom package » ─── */
 .package-row .desc .incl {
   display: block; font-family: var(--font-mono); font-size: 0.68rem;
@@ -855,6 +899,11 @@ html.js .rv-row.in > *:not(.select-test) { opacity: 1; }
   .tariff-row .select-test { opacity: 1; transform: none; }
 }
 @media (max-width: 768px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .shot-lead { grid-column: span 2; }
+  .shot:not(.shot-lead) { grid-column: span 1; }
+  .info-row { grid-template-columns: 1fr; gap: 0.4rem; }
+
   .hero-facts { grid-template-columns: 1fr 1fr; }
   .hero-facts .fact { padding: 1.1rem 1rem 1.1rem 0; }
   .hero-facts dd { font-size: 1.05rem; overflow-wrap: anywhere; }
