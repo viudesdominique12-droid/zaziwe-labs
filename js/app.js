@@ -11,7 +11,7 @@ document.documentElement.classList.add('js');
 const CONFIG = {
   // URL du site, utilisée par le QR code et le bouton de partage.
   // À remplacer le jour où le labo prend un nom de domaine.
-  siteUrl: 'https://viudesdominique12-droid.github.io/zaziwe-labs/',
+  siteUrl: 'https://zaziwemedlab.com/',
   // Coordonnées officielles (confirmées par le laboratoire)
   phone: '+251908000077',
   whatsapp: '251908000077',        // wa.me — numéro principal de la société
