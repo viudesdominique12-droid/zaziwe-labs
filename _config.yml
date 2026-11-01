@@ -1,0 +1,7 @@
+# GitHub Pages : fichiers de travail gardés dans le repo mais pas publiés sur le site
+# (sinon Google peut les trouver sur zaziwemedlab.com)
+exclude:
+  - CONTENU-A-VALIDER.md
+  - content
+  - logo
+  - assets/README.md
